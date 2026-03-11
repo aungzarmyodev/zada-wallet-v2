@@ -1,104 +1,140 @@
-import { useFirstNameFromPidCredential } from '@easypid/hooks'
 import { Trans, useLingui } from '@lingui/react/macro'
-import { useRefreshedDeferredCredentials } from '@package/agent'
+import { useCredentialsForDisplay } from '@package/agent'
 import { useHaptics } from '@package/app/hooks'
 import {
   AnimatedStack,
-  Blob,
   CustomIcons,
   FlexPage,
   Heading,
   HeroIcons,
   IconContainer,
+  Loader,
   Paragraph,
   ScrollView,
-  Spacer,
   Stack,
-  useSpringify,
   XStack,
   YStack,
 } from '@package/ui'
 import { useRouter } from 'expo-router'
-import { FadeIn } from 'react-native-reanimated'
-import { ActionCard } from './components/ActionCard'
-import { AllCardsCard } from './components/AllCardsCard'
 import { InboxIcon } from './components/InboxIcon'
-import { LatestActivityCard } from './components/LatestActivityCard'
+import { FunkeCredentialRowCard } from '@easypid/features/wallet/FunkeCredentialsScreen'
 
 export function FunkeWalletScreen() {
   const { push } = useRouter()
   const { withHaptics } = useHaptics()
-  const { userName, isLoading } = useFirstNameFromPidCredential()
+
+  const { credentials, isLoading: isLoadingCredentials } =
+    useCredentialsForDisplay()
 
   const pushToMenu = withHaptics(() => push('/menu'))
   const pushToScanner = withHaptics(() => push('/scan'))
-  const pushToOffline = () => {
-    withHaptics(() => push('/offline'))()
-  }
+  const pushToOffline = withHaptics(() => push('/offline'))
+
   const { t } = useLingui()
 
-  useRefreshedDeferredCredentials()
-
   return (
-    <YStack pos="relative" fg={1} bg="$background">
-      <YStack pos="absolute" h="50%" w="100%">
-        <Blob />
-      </YStack>
-
+    <YStack fg={1} bg="$background">
       <FlexPage fg={1} flex-1={false} bg="transparent">
-        <XStack pt="$2" jc="space-between">
-          <IconContainer bg="white" aria-label="Menu" icon={<HeroIcons.Menu />} onPress={pushToMenu} />
+        <XStack pt="$6"  px="$2" jc="space-between" ai="center">
+          <IconContainer
+            bg="white"
+            aria-label="Menu"
+            icon={<HeroIcons.Menu />}
+            onPress={pushToMenu}
+          />
+          <Heading fontSize={20} fontWeight="$bold">
+            ZADA
+          </Heading>
           <InboxIcon />
         </XStack>
+        <XStack gap="$4" jc="center"  w="95%" mx="auto">
+          <YStack
+            ai="center"
+            jc="center"
+            gap="$2"
+            borderWidth={0.5}
+            borderColor="$borderColor"
+            borderRadius="$4"
+            px="$4"
+            py="$4"
+            width="48%"
+            onPress={pushToScanner}
+          >
+            <CustomIcons.Qr size={28} />
 
-        <AnimatedStack fg={1} entering={useSpringify(FadeIn, 200)}>
-          <ScrollView scrollEnabled={false} contentContainerStyle={{ fg: 1 }}>
-            <YStack fg={1} f={1} gap="$4">
-              <YStack ai="center" jc="center" gap="$2">
-                <Heading
-                  heading="h1"
-                  fontSize={!userName || userName.length < 14 ? 38 : 26}
-                  lineHeight={!userName || userName.length < 14 ? 40 : 32}
-                  opacity={isLoading ? 0 : 1}
-                  ta="center"
-                  numberOfLines={2}
-                >
-                  {userName ? (
-                    <Trans id="home.helloWithName">Hello, {userName}!</Trans>
-                  ) : (
-                    <Trans id="home.helloWithoutName">Hello!</Trans>
-                  )}
+            <Paragraph ta="center">
+              {t({
+                id: 'home.scanQrButton',
+                message: 'Scan',
+              })}
+            </Paragraph>
+          </YStack>
+
+          <YStack
+            ai="center"
+            jc="center"
+            gap="$2"
+            borderWidth={0.5}
+            borderColor="$borderColor"
+            borderRadius="$4"
+            px="$4"
+            py="$4"
+            width="48%"
+            onPress={pushToOffline}
+          >
+            <CustomIcons.People size={28} />
+
+            <Paragraph ta="center">
+              {t({
+                id: 'home.presentInPersonButton',
+                message: 'Present In-person',
+              })}
+            </Paragraph>
+          </YStack>
+        </XStack>
+        <Stack h="$0.5" bg="$borderTranslucent" />
+        <ScrollView>
+            {isLoadingCredentials ? (
+              <YStack ai="center" jc="center">
+                <Loader />
+              </YStack>
+            ) : credentials.length > 0 ? (
+              <>
+                <Heading heading="h3" pb="$4" px="$2">
+                  Credential List
                 </Heading>
-                <Paragraph>
-                  <Trans id="home.receiveOrShare">Receive or share from your wallet</Trans>{' '}
-                </Paragraph>
-              </YStack>
-              <XStack gap="$4" jc="center" py="$2" w="95%" mx="auto">
-                <ActionCard
-                  variant="primary"
-                  icon={<CustomIcons.Qr color="white" />}
-                  title={t({ id: 'home.scanQrButton', message: 'Scan QR-code' })}
-                  onPress={pushToScanner}
-                />
-                <ActionCard
-                  variant="secondary"
-                  icon={<CustomIcons.People size={26} />}
-                  title={t({ id: 'home.presentInPersonButton', message: 'Present In-person' })}
-                  onPress={pushToOffline}
-                />
-              </XStack>
 
-              <Stack h="$4" />
-            </YStack>
-            <YStack gap="$4" jc="space-around" fg={1} f={1}>
-              <YStack gap="$4">
-                <LatestActivityCard />
-                <AllCardsCard />
-              </YStack>
-              <Spacer />
-            </YStack>
+                <YStack px="$2" gap="$2">
+                  {credentials.map((credential) => (
+                    <FunkeCredentialRowCard
+                      key={credential.id}
+                      name={credential.display.name}
+                      textColor={credential.display.textColor ?? '$grey-100'}
+                      backgroundColor={
+                        credential.display.backgroundColor ?? '$grey-900'
+                      }
+                      issuer={credential.display.issuer.name}
+                      logo={credential.display.issuer.logo}
+                      issuedAt={
+                        credential.metadata.issuedAt
+                          ? new Date(credential.metadata.issuedAt)
+                          : undefined
+                      }
+                      onPress={() =>
+                        push(`/credentials/${credential.id}`)
+                      }
+                    />
+                  ))}
+                </YStack>
+              </>
+            ) : (
+              <Paragraph ta="center">
+                <Trans id="credentials.emptyTitle">
+                  No cards yet
+                </Trans>
+              </Paragraph>
+            )}
           </ScrollView>
-        </AnimatedStack>
       </FlexPage>
     </YStack>
   )
