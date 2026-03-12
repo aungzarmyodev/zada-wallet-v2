@@ -65,7 +65,7 @@ export function FunkeWalletScreen() {
             <Paragraph ta="center">
               {t({
                 id: 'home.scanQrButton',
-                message: 'Scan',
+                message: 'Scan QR',
               })}
             </Paragraph>
           </YStack>
@@ -86,8 +86,8 @@ export function FunkeWalletScreen() {
 
             <Paragraph ta="center">
               {t({
-                id: 'home.presentInPersonButton',
-                message: 'Present In-person',
+                id: 'home.myQrButton',
+                message: 'My QR',
               })}
             </Paragraph>
           </YStack>
@@ -130,7 +130,7 @@ export function FunkeWalletScreen() {
             ) : (
               <Paragraph ta="center">
                 <Trans id="credentials.emptyTitle">
-                  No cards yet
+                  There's nothing here, yet
                 </Trans>
               </Paragraph>
             )}

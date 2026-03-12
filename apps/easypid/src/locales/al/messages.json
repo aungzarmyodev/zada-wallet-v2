@@ -296,7 +296,7 @@
     "origin": [
       [
         "src/features/menu/FunkeAboutScreen.tsx",
-        25
+        24
       ]
     ],
     "translation": "Rreth portofolit"
@@ -2265,7 +2265,7 @@
     "origin": [
       [
         "src/features/menu/FunkeAboutScreen.tsx",
-        35
+        34
       ]
     ],
     "translation": "Për më shumë informacion, kontakto"
@@ -2282,20 +2282,6 @@
     ],
     "translation": "Gjermanisht"
   },
-  "onboardingWelcome.getStarted": {
-    "message": "Get Started",
-    "placeholders": {},
-    "comments": [
-      "Button label to begin onboarding from the welcome screen"
-    ],
-    "origin": [
-      [
-        "src/features/onboarding/screens/welcome.tsx",
-        17
-      ]
-    ],
-    "translation": "Fillo"
-  },
   "onboardingWalletExplanation.getStarted": {
     "message": "Get Started",
     "placeholders": {},
@@ -2306,6 +2292,20 @@
       [
         "src/features/onboarding/screens/wallet-explanation.tsx",
         71
+      ]
+    ],
+    "translation": "Fillo"
+  },
+  "onboardingWelcome.getStarted": {
+    "message": "Get Started",
+    "placeholders": {},
+    "comments": [
+      "Button label to begin onboarding from the welcome screen"
+    ],
+    "origin": [
+      [
+        "src/features/onboarding/screens/welcome.tsx",
+        17
       ]
     ],
     "translation": "Fillo"
@@ -2446,7 +2446,8 @@
         67
       ]
     ],
-    "translation": "Përshëndetje, {userName}!"
+    "translation": "Përshëndetje, {userName}!",
+    "obsolete": true
   },
   "home.helloWithoutName": {
     "message": "Hello!",
@@ -2458,7 +2459,8 @@
         69
       ]
     ],
-    "translation": "Përshëndetje!"
+    "translation": "Përshëndetje!",
+    "obsolete": true
   },
   "credentials.hideMetadata": {
     "message": "Hide metadata attributes",
@@ -3042,6 +3044,18 @@
     ],
     "translation": "Metadata"
   },
+  "home.myQrButton": {
+    "translation": "",
+    "message": "My QR",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/features/wallet/FunkeWalletScreen.tsx",
+        88
+      ]
+    ]
+  },
   "common.fields.nationalities": {
     "message": "Nationalities",
     "placeholders": {},
@@ -3355,7 +3369,7 @@
     "origin": [
       [
         "src/features/menu/FunkeAboutScreen.tsx",
-        54
+        53
       ]
     ],
     "translation": "Hap politikën e privatësisë"
@@ -3656,7 +3670,8 @@
         86
       ]
     ],
-    "translation": "Paraqit personalisht"
+    "translation": "Paraqit personalisht",
+    "obsolete": true
   },
   "common.presentationCouldNotBeShared": {
     "message": "Presentation could not be shared.",
@@ -3707,7 +3722,7 @@
     "origin": [
       [
         "src/features/menu/FunkeAboutScreen.tsx",
-        49
+        48
       ]
     ],
     "translation": "Politika e Privatësisë"
@@ -3832,7 +3847,8 @@
         73
       ]
     ],
-    "translation": "Merr ose nda nga portofoli yt"
+    "translation": "Merr ose nda nga portofoli yt",
+    "obsolete": true
   },
   "activity.receivedFailed": {
     "message": "Receiving the cards from {0} failed.",
@@ -4020,20 +4036,6 @@
     ],
     "translation": "Rivendos Portofolin"
   },
-  "signShare.title": {
-    "message": "Review the request",
-    "placeholders": {},
-    "comments": [
-      "Main heading in the sign & share screen"
-    ],
-    "origin": [
-      [
-        "src/features/share/slides/SignAndShareSlide.tsx",
-        72
-      ]
-    ],
-    "translation": "Shiko kërkesën"
-  },
   "submission.reviewTitle": {
     "message": "Review the request",
     "placeholders": {},
@@ -4044,6 +4046,20 @@
       [
         "src/features/share/slides/ShareCredentialsSlide.tsx",
         61
+      ]
+    ],
+    "translation": "Shiko kërkesën"
+  },
+  "signShare.title": {
+    "message": "Review the request",
+    "placeholders": {},
+    "comments": [
+      "Main heading in the sign & share screen"
+    ],
+    "origin": [
+      [
+        "src/features/share/slides/SignAndShareSlide.tsx",
+        72
       ]
     ],
     "translation": "Shiko kërkesën"
@@ -4105,13 +4121,13 @@
     "translation": "Skanimi dështoi"
   },
   "home.scanQrButton": {
-    "message": "Scan QR-code",
+    "message": "Scan QR",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
         "src/features/wallet/FunkeWalletScreen.tsx",
-        80
+        66
       ]
     ],
     "translation": "Skano kodin QR"
@@ -4242,20 +4258,6 @@
     ],
     "translation": "Konfiguro më vonë"
   },
-  "menu.item.settings": {
-    "message": "Settings",
-    "placeholders": {},
-    "comments": [
-      "Label for settings menu item"
-    ],
-    "origin": [
-      [
-        "src/features/menu/FunkeMenuScreen.tsx",
-        124
-      ]
-    ],
-    "translation": "Cilësimet"
-  },
   "settings.title": {
     "message": "Settings",
     "placeholders": {},
@@ -4266,6 +4268,20 @@
       [
         "src/features/menu/FunkeSettingsScreen.tsx",
         155
+      ]
+    ],
+    "translation": "Cilësimet"
+  },
+  "menu.item.settings": {
+    "message": "Settings",
+    "placeholders": {},
+    "comments": [
+      "Label for settings menu item"
+    ],
+    "origin": [
+      [
+        "src/features/menu/FunkeMenuScreen.tsx",
+        124
       ]
     ],
     "translation": "Cilësimet"
@@ -5171,6 +5187,10 @@
       [
         "src/features/wallet/FunkeCredentialsScreen.tsx",
         65
+      ],
+      [
+        "src/features/wallet/FunkeWalletScreen.tsx",
+        132
       ]
     ],
     "translation": "Nuk ka asgjë këtu, ende"
@@ -6125,20 +6145,6 @@
     ],
     "translation": "Nuk i ke kartën/kartat e kërkuara."
   },
-  "signShare.missingCards": {
-    "message": "You don't have the required cards",
-    "placeholders": {},
-    "comments": [
-      "Shown when the user lacks the required credentials"
-    ],
-    "origin": [
-      [
-        "src/features/share/slides/SignAndShareSlide.tsx",
-        180
-      ]
-    ],
-    "translation": "Nuk i ke kartat e nevojshme"
-  },
   "submission.missingCardsWarning": {
     "message": "You don't have the required cards",
     "placeholders": {},
@@ -6149,6 +6155,20 @@
       [
         "src/features/share/slides/ShareCredentialsSlide.tsx",
         130
+      ]
+    ],
+    "translation": "Nuk i ke kartat e nevojshme"
+  },
+  "signShare.missingCards": {
+    "message": "You don't have the required cards",
+    "placeholders": {},
+    "comments": [
+      "Shown when the user lacks the required credentials"
+    ],
+    "origin": [
+      [
+        "src/features/share/slides/SignAndShareSlide.tsx",
+        180
       ]
     ],
     "translation": "Nuk i ke kartat e nevojshme"
