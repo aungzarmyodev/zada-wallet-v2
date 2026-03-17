@@ -84,7 +84,7 @@ const createBaseConfig = (appSpecific) => {
     orientation: 'portrait',
     icon,
     userInterfaceStyle: 'light',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#1B3760',
     updates: {
       fallbackToCacheTimeout: 0,
     },
@@ -106,6 +106,10 @@ const createBaseConfig = (appSpecific) => {
           image: splashIcon,
           resizeMode: 'contain',
           imageWidth: 200,
+          android: {
+            backgroundColor: '#1B3760',
+            image: splashIcon
+          },
           ios: {
             image: splash,
             resizeMode: 'cover',
