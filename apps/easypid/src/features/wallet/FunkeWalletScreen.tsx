@@ -54,16 +54,14 @@ export function FunkeWalletScreen() {
             icon={<HeroIcons.Menu />}
             onPress={pushToMenu}
           />
-
           <Paragraph
             fontSize={18}
             fontWeight="$bold"
             color="$grey-500"
             numberOfLines={1}
-          >
-            Credential List
+            >
+            {credentials.length === 0 ? 'ZADA' : 'Credential List'}
           </Paragraph>
-
           <InboxIcon />
         </XStack>
         {isLoadingCredentials ? (
