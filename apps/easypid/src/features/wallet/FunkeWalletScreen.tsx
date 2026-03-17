@@ -23,17 +23,14 @@ import { FunkeCredentialCard } from '@package/app/components'
 export function FunkeWalletScreen() {
   const { push } = useRouter()
   const { withHaptics } = useHaptics()
+  const { handleScroll, scrollEventThrottle } =
+    useScrollViewPosition()
 
   const {
-    handleScroll,
-    scrollEventThrottle,
-  } = useScrollViewPosition()
-
-  const { credentials, isLoading: isLoadingCredentials } =
-    useCredentialsForDisplay()
-
+    credentials,
+    isLoading: isLoadingCredentials,
+  } = useCredentialsForDisplay()
   const [searchQuery, setSearchQuery] = useState('')
-
   const filteredCredentials = useMemo(() => {
     return credentials.filter((credential) =>
       credential.display.name
@@ -57,6 +54,7 @@ export function FunkeWalletScreen() {
             icon={<HeroIcons.Menu />}
             onPress={pushToMenu}
           />
+
           <Paragraph
             fontSize={18}
             fontWeight="$bold"
@@ -65,28 +63,47 @@ export function FunkeWalletScreen() {
           >
             Credential List
           </Paragraph>
+
           <InboxIcon />
         </XStack>
-
         {isLoadingCredentials ? (
           <YStack ai="center" jc="center" mt="$6">
             <Loader />
           </YStack>
-
         ) : credentials.length === 0 ? (
-          <Paragraph ta="center" mt="$6">
-            <Trans id="credentials.emptyTitle">
-              There's nothing here, yet
-            </Trans>
-          </Paragraph>
+          <YStack ai="center" jc="center" mt="$10" px="$6">
+            <HeroIcons.Folder
+              size={64}
+              strokeWidth={1.5}
+              color="$grey-400"
+            />
 
+            <Paragraph
+              mt="$4"
+              fontSize={18}
+              fontWeight="$bold"
+              ta="center"
+            >
+              <Trans id="credentials.emptyTitle">
+                No credentials yet
+              </Trans>
+            </Paragraph>
+
+            <Paragraph
+              mt="$2"
+              color="$grey-500"
+              ta="center"
+            >
+              <Trans id="credentials.emptySubtitle">
+                Scan a QR code to add your first credential.
+              </Trans>
+            </Paragraph>
+          </YStack>
         ) : (
           <ScrollView
             onScroll={handleScroll}
             scrollEventThrottle={scrollEventThrottle}
-            contentContainerStyle={{
-              paddingBottom: 140,
-            }}
+            contentContainerStyle={{ paddingBottom: 140 }}
             showsVerticalScrollIndicator={false}
           >
             <Stack position="relative" px="$2">
@@ -119,7 +136,6 @@ export function FunkeWalletScreen() {
                 left="$4"
               />
             </Stack>
-
             {filteredCredentials.length > 0 ? (
               <YStack px="$2" pb="$12">
                 {filteredCredentials.map((credential, index) => (
@@ -130,25 +146,22 @@ export function FunkeWalletScreen() {
                   >
                     <FunkeCredentialCard
                       issuerImage={{
-                        url:
-                          credential.display.issuer.logo?.url,
+                        url: credential.display.issuer.logo?.url,
                         altText:
-                          credential.display.issuer.logo
-                            ?.altText,
+                          credential.display.issuer.logo?.altText,
                       }}
                       textColor={credential.display.textColor}
                       name={credential.display.name}
                       backgroundImage={{
                         url:
-                          credential.display
-                            .backgroundImage?.url,
+                          credential.display.backgroundImage?.url,
                         altText:
-                          credential.display
-                            .backgroundImage?.altText,
+                          credential.display.backgroundImage
+                            ?.altText,
                       }}
                       bgColor={
-                        credential.display
-                          .backgroundColor ?? '$grey-900'
+                        credential.display.backgroundColor ??
+                        '$grey-900'
                       }
                       onPress={() =>
                         push(
@@ -160,9 +173,19 @@ export function FunkeWalletScreen() {
                 ))}
               </YStack>
             ) : (
-              <YStack ai="center" mt="$6">
-                <Paragraph color="$grey-500">
-                  No results found for "{searchQuery}"
+              <YStack ai="center" mt="$10" px="$6">
+                <HeroIcons.MagnifyingGlass
+                  size={48}
+                  strokeWidth={1.5}
+                  color="$grey-400"
+                />
+
+                <Paragraph mt="$4" fontWeight="$bold">
+                  No results found
+                </Paragraph>
+
+                <Paragraph mt="$2" color="$grey-500" ta="center">
+                  Try a different keyword
                 </Paragraph>
               </YStack>
             )}
