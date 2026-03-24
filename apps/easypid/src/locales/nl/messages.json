@@ -930,7 +930,7 @@
     "origin": [
       [
         "src/features/menu/FunkeSettingsScreen.tsx",
-        180
+        174
       ]
     ],
     "translation": "Biometrische authenticatie is uitgeschakeld of wordt niet ondersteund op dit apparaat."
@@ -968,7 +968,7 @@
     "origin": [
       [
         "src/features/menu/FunkeSettingsScreen.tsx",
-        171
+        165
       ]
     ],
     "translation": "Biometrisch ontgrendelen"
@@ -982,7 +982,7 @@
     "origin": [
       [
         "src/features/menu/FunkeSettingsScreen.tsx",
-        133
+        129
       ]
     ],
     "translation": "Biometrie uitgeschakeld"
@@ -996,7 +996,7 @@
     "origin": [
       [
         "src/features/menu/FunkeSettingsScreen.tsx",
-        99
+        97
       ]
     ],
     "translation": "Biometrie ingeschakeld"
@@ -1748,7 +1748,8 @@
         192
       ]
     ],
-    "translation": "Ontwikkelingsmodus"
+    "translation": "Ontwikkelingsmodus",
+    "obsolete": true
   },
   "nfcScanner.scanning.title": {
     "message": "Do not move the eID card",
@@ -2130,7 +2131,8 @@
         204
       ]
     ],
-    "translation": "Debug logs exporteren"
+    "translation": "Debug logs exporteren",
+    "obsolete": true
   },
   "settings.exportDebugLogsDescription": {
     "message": "Export the last 1000 debug logs from the wallet. Note that this can contain sensitive information.",
@@ -2144,7 +2146,8 @@
         211
       ]
     ],
-    "translation": "Exporteer de laatste 1000 debug logs van je wallet. Let op: dit kan gevoelige informatie bevatten."
+    "translation": "Exporteer de laatste 1000 debug logs van je wallet. Let op: dit kan gevoelige informatie bevatten.",
+    "obsolete": true
   },
   "activity.latest.failedCard": {
     "message": "Failed to add {name}",
@@ -2282,20 +2285,6 @@
     ],
     "translation": "Duits"
   },
-  "onboardingWalletExplanation.getStarted": {
-    "message": "Get Started",
-    "placeholders": {},
-    "comments": [
-      "Button label to finish onboarding explanation"
-    ],
-    "origin": [
-      [
-        "src/features/onboarding/screens/wallet-explanation.tsx",
-        71
-      ]
-    ],
-    "translation": "Aan de slag"
-  },
   "onboardingWelcome.getStarted": {
     "message": "Get Started",
     "placeholders": {},
@@ -2306,6 +2295,20 @@
       [
         "src/features/onboarding/screens/welcome.tsx",
         17
+      ]
+    ],
+    "translation": "Aan de slag"
+  },
+  "onboardingWalletExplanation.getStarted": {
+    "message": "Get Started",
+    "placeholders": {},
+    "comments": [
+      "Button label to finish onboarding explanation"
+    ],
+    "origin": [
+      [
+        "src/features/onboarding/screens/wallet-explanation.tsx",
+        71
       ]
     ],
     "translation": "Aan de slag"
@@ -2899,7 +2902,7 @@
     "origin": [
       [
         "src/features/menu/FunkeSettingsScreen.tsx",
-        63
+        62
       ]
     ],
     "translation": "Taal"
@@ -3054,7 +3057,8 @@
         "src/features/wallet/FunkeWalletScreen.tsx",
         88
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "common.fields.nationalities": {
     "message": "Nationalities",
@@ -3191,6 +3195,18 @@
       ]
     ],
     "translation": "Nog geen kaarten"
+  },
+  "search.noResults": {
+    "message": "No credentials found",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/features/wallet/FunkeWalletScreen.tsx",
+        166
+      ]
+    ],
+    "translation": ""
   },
   "presentation.noCredentialsSelected": {
     "message": "No credentials selected",
@@ -4036,20 +4052,6 @@
     ],
     "translation": "Wallet resetten"
   },
-  "submission.reviewTitle": {
-    "message": "Review the request",
-    "placeholders": {},
-    "comments": [
-      "Heading shown at the top of the share credentials screen"
-    ],
-    "origin": [
-      [
-        "src/features/share/slides/ShareCredentialsSlide.tsx",
-        61
-      ]
-    ],
-    "translation": "Bekijk het verzoek"
-  },
   "signShare.title": {
     "message": "Review the request",
     "placeholders": {},
@@ -4060,6 +4062,20 @@
       [
         "src/features/share/slides/SignAndShareSlide.tsx",
         72
+      ]
+    ],
+    "translation": "Bekijk het verzoek"
+  },
+  "submission.reviewTitle": {
+    "message": "Review the request",
+    "placeholders": {},
+    "comments": [
+      "Heading shown at the top of the share credentials screen"
+    ],
+    "origin": [
+      [
+        "src/features/share/slides/ShareCredentialsSlide.tsx",
+        61
       ]
     ],
     "translation": "Bekijk het verzoek"
@@ -4077,6 +4093,18 @@
       ]
     ],
     "translation": "Ingetrokken"
+  },
+  "home.scanButton": {
+    "message": "Scan",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/features/wallet/FunkeWalletScreen.tsx",
+        194
+      ]
+    ],
+    "translation": ""
   },
   "noContentWallet.scanButton": {
     "message": "Scan a QR code",
@@ -4130,7 +4158,8 @@
         66
       ]
     ],
-    "translation": "Scan QR-code"
+    "translation": "Scan QR-code",
+    "obsolete": true
   },
   "nfcScanner.complete.title": {
     "message": "Scan successful!",
@@ -4200,6 +4229,10 @@
       [
         "src/features/wallet/FunkeCredentialsScreen.tsx",
         91
+      ],
+      [
+        "src/features/wallet/FunkeWalletScreen.tsx",
+        108
       ]
     ],
     "translation": "Zoek kaarten"
@@ -4258,20 +4291,6 @@
     ],
     "translation": "Later instellen"
   },
-  "settings.title": {
-    "message": "Settings",
-    "placeholders": {},
-    "comments": [
-      "Header title for the settings screen"
-    ],
-    "origin": [
-      [
-        "src/features/menu/FunkeSettingsScreen.tsx",
-        155
-      ]
-    ],
-    "translation": "Instellingen"
-  },
   "menu.item.settings": {
     "message": "Settings",
     "placeholders": {},
@@ -4282,6 +4301,20 @@
       [
         "src/features/menu/FunkeMenuScreen.tsx",
         124
+      ]
+    ],
+    "translation": "Instellingen"
+  },
+  "settings.title": {
+    "message": "Settings",
+    "placeholders": {},
+    "comments": [
+      "Header title for the settings screen"
+    ],
+    "origin": [
+      [
+        "src/features/menu/FunkeSettingsScreen.tsx",
+        149
       ]
     ],
     "translation": "Instellingen"
@@ -5176,24 +5209,6 @@
       ]
     ],
     "translation": "Er zijn geen organisaties die deze onbekende organisatie vertrouwen."
-  },
-  "credentials.emptyTitle": {
-    "message": "There's nothing here, yet",
-    "placeholders": {},
-    "comments": [
-      "Shown when the user has no credentials"
-    ],
-    "origin": [
-      [
-        "src/features/wallet/FunkeCredentialsScreen.tsx",
-        65
-      ],
-      [
-        "src/features/wallet/FunkeWalletScreen.tsx",
-        132
-      ]
-    ],
-    "translation": "Er is hier nog niets"
   },
   "activity.emptyTitle": {
     "message": "There's nothing here, yet",
@@ -6103,6 +6118,58 @@
     ],
     "translation": "Je hebt niet alle gevraagde kaarten."
   },
+  "credentials.emptyTitle": {
+    "message": "You don’t have any credentials yet",
+    "placeholders": {},
+    "comments": [
+      "Shown when the user has no credentials"
+    ],
+    "origin": [
+      [
+        "src/features/wallet/FunkeCredentialsScreen.tsx",
+        65
+      ]
+    ],
+    "translation": "Er is hier nog niets"
+  },
+  "wallet.emptyTitle": {
+    "translation": "",
+    "message": "You don’t have any credentials yet",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/features/wallet/FunkeWalletScreen.tsx",
+        82
+      ]
+    ],
+    "obsolete": true
+  },
+  "wallet.emptyCredentials": {
+    "message": "You don’t have any credentials yet. Scan a QR code to add your first credential.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/features/wallet/FunkeWalletScreen.tsx",
+        81
+      ]
+    ],
+    "translation": ""
+  },
+  "wallet.emptySubtitle": {
+    "message": "You don’t have any credentials yet. Scan a QR code to add your first credential.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/features/wallet/FunkeWalletScreen.tsx",
+        81
+      ]
+    ],
+    "translation": "",
+    "obsolete": true
+  },
   "inbox.emptyMessage": {
     "message": "You don't have any notifications at the moment.",
     "placeholders": {},
@@ -6145,20 +6212,6 @@
     ],
     "translation": "Je hebt de gevraagde kaart(en) niet."
   },
-  "submission.missingCardsWarning": {
-    "message": "You don't have the required cards",
-    "placeholders": {},
-    "comments": [
-      "Shown when user lacks required credentials"
-    ],
-    "origin": [
-      [
-        "src/features/share/slides/ShareCredentialsSlide.tsx",
-        130
-      ]
-    ],
-    "translation": "Je hebt niet de vereiste kaarten"
-  },
   "signShare.missingCards": {
     "message": "You don't have the required cards",
     "placeholders": {},
@@ -6169,6 +6222,20 @@
       [
         "src/features/share/slides/SignAndShareSlide.tsx",
         180
+      ]
+    ],
+    "translation": "Je hebt niet de vereiste kaarten"
+  },
+  "submission.missingCardsWarning": {
+    "message": "You don't have the required cards",
+    "placeholders": {},
+    "comments": [
+      "Shown when user lacks required credentials"
+    ],
+    "origin": [
+      [
+        "src/features/share/slides/ShareCredentialsSlide.tsx",
+        130
       ]
     ],
     "translation": "Je hebt niet de vereiste kaarten"

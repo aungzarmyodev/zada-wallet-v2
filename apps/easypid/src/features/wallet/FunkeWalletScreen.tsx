@@ -25,7 +25,6 @@ export function FunkeWalletScreen() {
   const { withHaptics } = useHaptics()
   const { handleScroll, scrollEventThrottle } =
     useScrollViewPosition()
-
   const {
     credentials,
     isLoading: isLoadingCredentials,
@@ -41,7 +40,6 @@ export function FunkeWalletScreen() {
 
   const pushToMenu = withHaptics(() => push('/menu'))
   const pushToScanner = withHaptics(() => push('/scan'))
-
   const { t } = useLingui()
 
   return (
@@ -75,25 +73,13 @@ export function FunkeWalletScreen() {
               strokeWidth={1.5}
               color="$grey-400"
             />
-
-            <Paragraph
-              mt="$4"
-              fontSize={18}
-              fontWeight="$bold"
-              ta="center"
-            >
-              <Trans id="credentials.emptyTitle">
-                No credentials yet
-              </Trans>
-            </Paragraph>
-
             <Paragraph
               mt="$2"
               color="$grey-500"
               ta="center"
             >
-              <Trans id="credentials.emptySubtitle">
-                Scan a QR code to add your first credential.
+              <Trans id="wallet.emptyCredentials">
+               You don’t have any credentials yet. Scan a QR code to add your first credential.
               </Trans>
             </Paragraph>
           </YStack>
@@ -124,7 +110,6 @@ export function FunkeWalletScreen() {
                   message: 'Search cards',
                 })}
               />
-
               <HeroIcons.MagnifyingGlass
                 size={20}
                 strokeWidth={2.5}
@@ -177,13 +162,10 @@ export function FunkeWalletScreen() {
                   strokeWidth={1.5}
                   color="$grey-400"
                 />
-
-                <Paragraph mt="$4" fontWeight="$bold">
-                  No results found
-                </Paragraph>
-
                 <Paragraph mt="$2" color="$grey-500" ta="center">
-                  Try a different keyword
+                  <Trans id="search.noResults">
+                      No credentials found
+                   </Trans>
                 </Paragraph>
               </YStack>
             )}
@@ -209,7 +191,9 @@ export function FunkeWalletScreen() {
         >
           <CustomIcons.Qr size={28} color="$white" />
           <Paragraph color="$white" fontWeight="$bold">
-            Scan
+             <Trans id="home.scanButton">
+              Scan
+             </Trans>
           </Paragraph>
         </XStack>
       </XStack>
