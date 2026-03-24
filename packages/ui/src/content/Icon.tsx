@@ -58,6 +58,7 @@ import {
   UserIcon,
   XCircleIcon,
   XMarkIcon,
+  FolderIcon,
 } from 'react-native-heroicons/outline'
 import {
   ArchiveBoxXMarkIcon as ArchiveBoxXMarkFilledIcon,
@@ -202,6 +203,7 @@ export const HeroIcons = {
   ArrowUpRightFilled: wrapHeroIcon(ArrowUpRightFilledIcon),
   PenFilled: wrapHeroIcon(PencilFilledIcon),
   Pen: wrapHeroIcon(PencilIcon),
+  Folder: wrapHeroIcon(FolderIcon),
 } as const
 
 export const CustomIcons = {

@@ -23,7 +23,7 @@ export const copy = {
       description: defineMessage({
         id: 'paradymWallet.about.description',
         message:
-          'This app was created by Animo Solutions as a companion app for Paradym. All code is available under Apache 2.0.',
+          'ZADA is a Digital Identity Technology Company, driven to ensure everyone can provide and use digital services without risk for fraud or privacy intrusion.\n\nUsing ZADA, you are in full control of your data. You decide what you want to receive and what you want to share with who.\n\nZADA is leading a revolution in how personal information is managed, and by using ZADA you are part of this change!\n\nTo contribute back to the community, the ZADA App is created as an open source project, originally created by Trustnet Pakistan, so other companies that want to launch a wallet on ZADA Network also can do that.\n\nZADA is not just an app but an ecosystem, a network, and a mission to ensure everyone can provide and use digital services without risk for fraud or privacy intrusion!',
         comment: 'About screen description text for the Paradym wallet',
       }),
       emailHeader: defineMessage({
