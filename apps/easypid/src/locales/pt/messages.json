@@ -2285,20 +2285,6 @@
     ],
     "translation": "Alemão"
   },
-  "onboardingWelcome.getStarted": {
-    "message": "Get Started",
-    "placeholders": {},
-    "comments": [
-      "Button label to begin onboarding from the welcome screen"
-    ],
-    "origin": [
-      [
-        "src/features/onboarding/screens/welcome.tsx",
-        17
-      ]
-    ],
-    "translation": "Começar"
-  },
   "onboardingWalletExplanation.getStarted": {
     "message": "Get Started",
     "placeholders": {},
@@ -2309,6 +2295,20 @@
       [
         "src/features/onboarding/screens/wallet-explanation.tsx",
         71
+      ]
+    ],
+    "translation": "Começar"
+  },
+  "onboardingWelcome.getStarted": {
+    "message": "Get Started",
+    "placeholders": {},
+    "comments": [
+      "Button label to begin onboarding from the welcome screen"
+    ],
+    "origin": [
+      [
+        "src/features/onboarding/screens/welcome.tsx",
+        17
       ]
     ],
     "translation": "Começar"
@@ -6437,7 +6437,7 @@
     "translation": "O seu PIN é necessário para desbloquear a aplicação"
   },
   "paradymWallet.about.description": {
-    "message": "ZADA is a Digital Identity Technology Company, driven to ensure everyone can provide and use digital services without risk for fraud or privacy intrusion.\n\nUsing ZADA, you are in full control of your data. You decide what you want to receive and what you want to share with who.\n\nZADA is leading a revolution in how personal information is managed, and by using ZADA you are part of this change!\n\nTo contribute back to the community, the ZADA App is created as an open source project, originally created by Trustnet Pakistan, so other companies that want to launch a wallet on ZADA Network also can do that.\n\nZADA is not just an app but an ecosystem, a network, and a mission to ensure everyone can provide and use digital services without risk for fraud or privacy intrusion!",
+    "message": "ZADA is a digital identity technology company focused on enabling secure and privacy-preserving access to digital services. Our goal is to help individuals and organizations interact digitally with greater trust, while minimizing fraud and unnecessary data exposure.\n\nWith ZADA, users remain in control of their personal data and can choose what information to share, with whom, and for what purpose.\n\nThis application is based on open-source software and includes components developed by Animo Solutions and other contributors, licensed under the Apache License, Version 2.0. ZADA Network has modified and extended this software as part of its implementation.\n\nUnless otherwise stated, the software is provided “as is,” without warranties or conditions of any kind.\n\nZADA supports an ecosystem approach to digital identity, enabling trusted and reusable interactions across services.\n",
     "placeholders": {},
     "comments": [
       "About screen description text for the Paradym wallet"

@@ -39,7 +39,6 @@ export function FunkeAboutScreen() {
                 <Paragraph fontWeight="$semiBold" color="$primary-500" onPress={openContact}>
                   help@zada.io
                 </Paragraph>
-                .
               </Paragraph>
             </YStack>
             <YStack gap="$2" fg={1} jc="space-between">
