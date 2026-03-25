@@ -107,7 +107,7 @@ export function FunkeCredentialDetailScreen() {
                 variant="view"
                 title={t({
                   id: 'credentials.cardAttributes',
-                  message: 'Card attributes',
+                  message: 'Credential Details',
                   comment: 'Label for button that shows detailed card attributes',
                 })}
                 description={t({

@@ -1089,25 +1089,6 @@
     ],
     "translation": "Kort tillagt"
   },
-  "credentials.cardAttributes": {
-    "message": "Card attributes",
-    "placeholders": {},
-    "comments": [
-      "Label for button that shows detailed card attributes",
-      "Title shown in header for the credential detail attributes screen"
-    ],
-    "origin": [
-      [
-        "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
-        94
-      ],
-      [
-        "src/features/wallet/FunkeCredentialDetailScreen.tsx",
-        108
-      ]
-    ],
-    "translation": "Kortuppgifter"
-  },
   "credentials.detailsTitle": {
     "message": "Card details",
     "placeholders": {},
@@ -1531,6 +1512,25 @@
       ]
     ],
     "translation": "Kort"
+  },
+  "credentials.cardAttributes": {
+    "message": "Credential Details",
+    "placeholders": {},
+    "comments": [
+      "Label for button that shows detailed card attributes",
+      "Title shown in header for the credential detail attributes screen"
+    ],
+    "origin": [
+      [
+        "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
+        81
+      ],
+      [
+        "src/features/wallet/FunkeCredentialDetailScreen.tsx",
+        108
+      ]
+    ],
+    "translation": "Kortuppgifter"
   },
   "credential.declined": {
     "message": "Credential has been declined.",
@@ -2285,20 +2285,6 @@
     ],
     "translation": "Tyska"
   },
-  "onboardingWalletExplanation.getStarted": {
-    "message": "Get Started",
-    "placeholders": {},
-    "comments": [
-      "Button label to finish onboarding explanation"
-    ],
-    "origin": [
-      [
-        "src/features/onboarding/screens/wallet-explanation.tsx",
-        71
-      ]
-    ],
-    "translation": "Kom igång"
-  },
   "onboardingWelcome.getStarted": {
     "message": "Get Started",
     "placeholders": {},
@@ -2309,6 +2295,20 @@
       [
         "src/features/onboarding/screens/welcome.tsx",
         17
+      ]
+    ],
+    "translation": "Kom igång"
+  },
+  "onboardingWalletExplanation.getStarted": {
+    "message": "Get Started",
+    "placeholders": {},
+    "comments": [
+      "Button label to finish onboarding explanation"
+    ],
+    "origin": [
+      [
+        "src/features/onboarding/screens/wallet-explanation.tsx",
+        71
       ]
     ],
     "translation": "Kom igång"
@@ -2465,20 +2465,6 @@
     "translation": "Hej!",
     "obsolete": true
   },
-  "credentials.hideMetadata": {
-    "message": "Hide metadata attributes",
-    "placeholders": {},
-    "comments": [
-      "Button label: toggles visibility of metadata attributes"
-    ],
-    "origin": [
-      [
-        "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
-        177
-      ]
-    ],
-    "translation": "Dölj metadata"
-  },
   "optionSheet.hideMetadata": {
     "message": "Hide metadata attributes",
     "placeholders": {},
@@ -2493,6 +2479,21 @@
     ],
     "translation": "Dölj metadata"
   },
+  "credentials.hideMetadata": {
+    "message": "Hide metadata attributes",
+    "placeholders": {},
+    "comments": [
+      "Button label: toggles visibility of metadata attributes"
+    ],
+    "origin": [
+      [
+        "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
+        177
+      ]
+    ],
+    "translation": "Dölj metadata",
+    "obsolete": true
+  },
   "credentials.hideShareableAttributes": {
     "message": "Hide shareable attributes",
     "placeholders": {},
@@ -2505,7 +2506,8 @@
         160
       ]
     ],
-    "translation": "Dölj delbara uppgifter"
+    "translation": "Dölj delbara uppgifter",
+    "obsolete": true
   },
   "common.fields.holder": {
     "message": "Holder",
@@ -3019,20 +3021,6 @@
     ],
     "translation": "Meny"
   },
-  "credentials.metadataAttributes": {
-    "message": "Metadata",
-    "placeholders": {},
-    "comments": [
-      "Header for metadata attributes of a credential"
-    ],
-    "origin": [
-      [
-        "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
-        131
-      ]
-    ],
-    "translation": "Metadata"
-  },
   "requestedAttributes.metadataTitle": {
     "message": "Metadata",
     "placeholders": {},
@@ -3046,6 +3034,21 @@
       ]
     ],
     "translation": "Metadata"
+  },
+  "credentials.metadataAttributes": {
+    "message": "Metadata",
+    "placeholders": {},
+    "comments": [
+      "Header for metadata attributes of a credential"
+    ],
+    "origin": [
+      [
+        "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
+        131
+      ]
+    ],
+    "translation": "Metadata",
+    "obsolete": true
   },
   "home.myQrButton": {
     "translation": "",
@@ -3159,7 +3162,7 @@
     "origin": [
       [
         "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
-        74
+        57
       ]
     ],
     "translation": "Inga uppgifter hittades"
@@ -3385,7 +3388,7 @@
     "origin": [
       [
         "src/features/menu/FunkeAboutScreen.tsx",
-        53
+        52
       ]
     ],
     "translation": "Öppna integritetspolicyn"
@@ -3738,7 +3741,7 @@
     "origin": [
       [
         "src/features/menu/FunkeAboutScreen.tsx",
-        48
+        47
       ]
     ],
     "translation": "Integritetspolicy"
@@ -4052,20 +4055,6 @@
     ],
     "translation": "Återställ plånbok"
   },
-  "signShare.title": {
-    "message": "Review the request",
-    "placeholders": {},
-    "comments": [
-      "Main heading in the sign & share screen"
-    ],
-    "origin": [
-      [
-        "src/features/share/slides/SignAndShareSlide.tsx",
-        72
-      ]
-    ],
-    "translation": "Granska förfrågan"
-  },
   "submission.reviewTitle": {
     "message": "Review the request",
     "placeholders": {},
@@ -4076,6 +4065,20 @@
       [
         "src/features/share/slides/ShareCredentialsSlide.tsx",
         61
+      ]
+    ],
+    "translation": "Granska förfrågan"
+  },
+  "signShare.title": {
+    "message": "Review the request",
+    "placeholders": {},
+    "comments": [
+      "Main heading in the sign & share screen"
+    ],
+    "origin": [
+      [
+        "src/features/share/slides/SignAndShareSlide.tsx",
+        72
       ]
     ],
     "translation": "Granska förfrågan"
@@ -4356,7 +4359,7 @@
     "origin": [
       [
         "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
-        112
+        106
       ]
     ],
     "translation": "Delbara uppgifter"
@@ -4457,20 +4460,6 @@
     ],
     "translation": "Visa mindre"
   },
-  "credentials.showMetadata": {
-    "message": "Show metadata attributes",
-    "placeholders": {},
-    "comments": [
-      "Button label: toggles visibility of metadata attributes"
-    ],
-    "origin": [
-      [
-        "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
-        182
-      ]
-    ],
-    "translation": "Visa metadata"
-  },
   "optionSheet.showMetadata": {
     "message": "Show metadata attributes",
     "placeholders": {},
@@ -4484,6 +4473,21 @@
       ]
     ],
     "translation": "Visa metadata"
+  },
+  "credentials.showMetadata": {
+    "message": "Show metadata attributes",
+    "placeholders": {},
+    "comments": [
+      "Button label: toggles visibility of metadata attributes"
+    ],
+    "origin": [
+      [
+        "src/features/wallet/FunkeCredentialDetailAttributesScreen.tsx",
+        182
+      ]
+    ],
+    "translation": "Visa metadata",
+    "obsolete": true
   },
   "common.showMore": {
     "message": "Show more",
@@ -4509,7 +4513,8 @@
         165
       ]
     ],
-    "translation": "Visa delbara uppgifter"
+    "translation": "Visa delbara uppgifter",
+    "obsolete": true
   },
   "common.credentials.mdl.sign": {
     "message": "Sign",
@@ -6212,20 +6217,6 @@
     ],
     "translation": "Du har inte de begärda korten."
   },
-  "signShare.missingCards": {
-    "message": "You don't have the required cards",
-    "placeholders": {},
-    "comments": [
-      "Shown when the user lacks the required credentials"
-    ],
-    "origin": [
-      [
-        "src/features/share/slides/SignAndShareSlide.tsx",
-        180
-      ]
-    ],
-    "translation": "Du har inte de kort som krävs"
-  },
   "submission.missingCardsWarning": {
     "message": "You don't have the required cards",
     "placeholders": {},
@@ -6236,6 +6227,20 @@
       [
         "src/features/share/slides/ShareCredentialsSlide.tsx",
         130
+      ]
+    ],
+    "translation": "Du har inte de kort som krävs"
+  },
+  "signShare.missingCards": {
+    "message": "You don't have the required cards",
+    "placeholders": {},
+    "comments": [
+      "Shown when the user lacks the required credentials"
+    ],
+    "origin": [
+      [
+        "src/features/share/slides/SignAndShareSlide.tsx",
+        180
       ]
     ],
     "translation": "Du har inte de kort som krävs"
