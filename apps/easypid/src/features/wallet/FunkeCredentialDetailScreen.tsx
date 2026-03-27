@@ -32,9 +32,13 @@ export function FunkeCredentialDetailScreen() {
   const [isSheetOpen, setIsSheetOpen] = useState(false)
 
   useHeaderRightAction({
-    icon: <HeroIcons.Trash />,
-    onPress: withHaptics(() => setIsSheetOpen(true)),
-    renderCondition: credential?.category?.canDeleteCredential ?? true,
+    actions: [
+      {
+        icon: <HeroIcons.Trash />,
+        onPress: withHaptics(() => setIsSheetOpen(true)),
+        renderCondition: credential?.category?.canDeleteCredential ?? true,
+      }
+    ]
   })
 
   if (!credential) {

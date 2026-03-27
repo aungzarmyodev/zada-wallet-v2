@@ -6,13 +6,13 @@ import {
   FunkeCredentialCard,
   TextBackButton,
 } from '@package/app/components'
-
 import {
   useHaptics,
   useHeaderRightAction,
   useScrollViewPosition,
 } from '@package/app/hooks'
-
+import * as Sharing from 'expo-sharing'
+import { useShareCredential } from '@easypid/hooks/useShareCredential'
 import {
   FlexPage,
   HeaderContainer,
@@ -21,8 +21,8 @@ import {
   type ScrollViewRefType,
   useToastController,
   YStack,
+  Loader,
 } from '@package/ui'
-
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import { useRef, useState } from 'react'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -41,15 +41,39 @@ export function FunkeCredentialDetailAttributesScreen() {
   const { withHaptics } = useHaptics()
 
   const [isSheetOpen, setIsSheetOpen] = useState(false)
+  const [isSharing, setIsSharing] = useState(false)
 
   const scrollViewRef = useRef<ScrollViewRefType>(null)
   const { t } = useLingui()
-  
-  // Delete credentail 
+
+  const handleShare = async () => {
+    if (!credential || isSharing) return
+
+    try {
+      setIsSharing(true)
+      const uri = await useShareCredential(credential)
+      setIsSharing(false)
+
+      if (!uri) return
+      await new Promise(resolve => setTimeout(resolve, 100))
+      await Sharing.shareAsync(uri)
+    } catch (e) {
+      setIsSharing(false)
+    }
+  }
+
   useHeaderRightAction({
-    icon: <HeroIcons.Trash color={'$color.danger-500'} />,
-    onPress: withHaptics(() => setIsSheetOpen(true)),
-    renderCondition: credential?.category?.canDeleteCredential ?? true,
+    actions: [
+      {
+        icon: <HeroIcons.Share />,
+        onPress: withHaptics(handleShare),
+      },
+      {
+        icon: <HeroIcons.Trash />,
+        onPress: withHaptics(() => setIsSheetOpen(true)),
+        renderCondition: credential?.category?.canDeleteCredential ?? true,
+      },
+    ],
   })
 
   if (!credential) {
@@ -57,7 +81,6 @@ export function FunkeCredentialDetailAttributesScreen() {
       t({
         id: 'credentials.noAttributes',
         message: 'No attributes found',
-        comment: 'Error toast when a credential has no displayable attributes',
       }),
       {
         customData: { preset: 'danger' },
@@ -75,17 +98,16 @@ export function FunkeCredentialDetailAttributesScreen() {
           onScroll={handleScroll}
           scrollEventThrottle={scrollEventThrottle}
         >
-          <YStack pt="$2"  px="$2" jc="center" ai="center"> 
+          <YStack pt="$2" px="$2" jc="center" ai="center">
             <HeaderContainer
-            isScrolledByOffset={isScrolledByOffset}
-            title={t({
-              id: 'credentials.cardAttributes',
-              message: 'Credential Details',
-              comment:
-                'Title shown in header for the credential detail attributes screen',
-            })}
-          />
+              isScrolledByOffset={isScrolledByOffset}
+              title={t({
+                id: 'credentials.cardAttributes',
+                message: 'Credential Details',
+              })}
+            />
           </YStack>
+
           <YStack px="$4" gap="$4" marginBottom={bottom}>
             <FunkeCredentialCard
               issuerImage={{
@@ -106,8 +128,6 @@ export function FunkeCredentialDetailAttributesScreen() {
               headerTitle={t({
                 id: 'credentials.shareableAttributes',
                 message: 'Shareable attributes',
-                comment:
-                  'Header for attributes that can be shared with a verifier',
               })}
               attributes={credential.attributes}
               scrollRef={scrollViewRef}
@@ -126,12 +146,28 @@ export function FunkeCredentialDetailAttributesScreen() {
           <TextBackButton />
         </YStack>
       </FlexPage>
+
       <DeleteCredentialSheet
         isSheetOpen={isSheetOpen}
         setIsSheetOpen={setIsSheetOpen}
         id={credential.id}
         name={credential.display.name}
       />
+
+      {isSharing && (
+        <YStack
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          bg="rgba(0,0,0,0.3)"
+          jc="center"
+          ai="center"
+        >
+          <Loader size="large" />
+        </YStack>
+      )}
     </YStack>
   )
 }
